@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GemStore">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body ng-controller="storeController as store">
+    <div class="center-block" style="width:500px; margin-top:5em;">
+        <h3>Store</h3>
+        <div class="bx">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="product in store.products">
+                    <h3 product-title></h3>
+                    <div class="gallery">
+                        <img ng-src="{{product.images[0]}}">
+                    </div>
+                    <section>
+                        <tab-controller></tab-controller>
+                    </section>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

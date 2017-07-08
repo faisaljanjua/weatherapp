@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="weatherApp">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Angular Weather App</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#forcast"> Forcast</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main">
+        <div class="col-md-12" ng-view>
+        </div>
+    </div>
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="/node_modules/angular-resource/angular-resource.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

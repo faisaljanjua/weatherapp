@@ -1,0 +1,29 @@
+{
+  "name": "angularlearning",
+  "version": "1.0.0",
+  "description": "angular learning ",
+  "main": "app.js",
+  "dependencies": {
+    "angular-route": "^1.6.4"
+  },
+  "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-resource": "^1.6.5",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-scss": "^1.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://www.github.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "fj",
+  "license": "ISC"
+}

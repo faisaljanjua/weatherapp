@@ -1,0 +1,49 @@
+                        
+                            <ul class="nav nav-pills">
+                                <li><a ng-click="panel.selectTab(1)">Description</a></li>
+                                <li><a ng-click="panel.selectTab(2)">Specification</a></li>
+                                <li><a ng-click="panel.selectTab(3)">Review</a></li>
+                            </ul>
+
+                            <div class="panel" ng-show="panel.isSet(1)">
+                                <h4>Description</h4>
+                                {{product.description}}
+                            </div>
+                            <div class="panel" ng-show="panel.isSet(2)">
+                                <h4>Specification</h4>
+                                description text
+                            </div>
+                            <div class="panel" ng-show="panel.isSet(3)">
+                                <ul class="list-unstyled">
+                                    <h4>Review</h4>
+                                    <li ng-repeat="review in product.reviews">
+                                        <blockquote>
+                                            Stars : {{review.stars}}<br/> {{review.body}}
+                                            <br/> by - {{review.author}}
+                                        </blockquote>
+                                    </li>
+                                </ul>
+                                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"
+                                    novalidate>
+                                    <blockquote>
+                                        Stars : {{reviewCtrl.review.stars}}<br/> {{reviewCtrl.review.body}}
+                                        <br/> by - {{reviewCtrl.review.author}}
+                                    </blockquote>
+                                    stars :
+                                    <select ng-model="reviewCtrl.review.stars" required>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    <br/> Text area :
+                                    <textarea ng-model="reviewCtrl.review.body" required></textarea>
+                                    <br/> Email
+                                    <input type="email" ng-model="reviewCtrl.review.author" required value="ta@s.com" />
+
+                                    <input type="submit" value="submit">
+
+                                </form>
+                            </div>
+                        

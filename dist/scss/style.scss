@@ -1,0 +1,35 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$background :#ccc;
+$radius: 0.65em;
+$f-small: 0.8em;
+
+body {
+  font: 150% $font-stack;
+  color: $primary-color;
+  background-color:$background;
+}
+
+.bx{
+  border:1px solid rebeccapurple;
+  border-radius: $radius;
+  padding:1.5em;
+}
+h3{
+  margin:0px; padding:0px;
+}
+.price{
+  font-size: $f-small;
+}
+
+.panel{
+  background:transparent;
+}
+
+.gallery{
+  margin:10px 0px;
+  text-align:center;
+}
+blockquote{
+  font-size: 12px;
+}

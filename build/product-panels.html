@@ -1,0 +1,56 @@
+<section>
+    <ul class="nav nav-pills">
+        <li class="{active: panels._isSet(1)}"><a ng-click="panels._isSelected(1)">Description</a></li>
+        <li class="{active: panels._isSet(2)}"><a ng-click="panels._isSelected(2)">Specification</a></li>
+        <li class="{active: panels._isSet(3)}"><a ng-click="panels._isSelected(3)">Review</a></li>
+    </ul>
+    <div class="panel" ng-show="panels._isSet(1)">
+        <h4>Description</h4>
+        {{product.description}}
+    </div>
+    <div class="panel" ng-show="panels._isSet(2)">
+        <h4>Specification</h4>
+        <label>Shine</label> : 
+        <label>Faces</label> : 
+        <label>Rarity</label> : 
+        <label>Color</label> : 
+    </div>
+    <div class="panel" ng-show="panels._isSet(3)">
+        <h4>Review</h4>
+        <blockquote ng-repeat="review in product.reviews">
+            <p>Stars <b>{{review.stars}}</b></p>
+            <p>Comments <b>{{review.body}}</b></p>
+            <p>by - <b>{{review.author}}</b></p>
+        </blockquote>
+
+        <form name="reviewForm"
+            ng-controller="reviewController as reveiwCrtl"
+            ng-submit="reviewForm.$valid && reviewCrtl.formSubmit(product)"
+            novalidate>
+            <blockquote>
+                <p>Stars <b>{{reveiwCrtl.review.stars}}</b></p>
+                <p>Comments <b>{{reveiwCrtl.review.body}}</b></p>
+                <p>by - <b>{{reveiwCrtl.review.author}}</b></p>
+            </blockquote>
+            <p>
+                <label>Stars</label>
+                <select ng-model="reveiwCrtl.review.stars" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </p>
+            <p>
+                <label>Comments</label>
+                <textarea ng-model="reveiwCrtl.review.body" required></textarea>
+            </p>
+            <p>
+                <label>by</label>
+                <input type="emai" value="abc@lll.com" ng-model="reveiwCrtl.review.author" required />
+            </p>
+            <input type="submit" value="submit review">
+        </form>
+    </div>
+</section>
